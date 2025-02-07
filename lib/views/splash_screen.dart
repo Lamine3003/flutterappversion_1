@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutters_bis/routes/navigation_route.dart';
 import 'package:flutters_bis/views/home.dart';
 
 import '../common/assets_images.dart';
@@ -26,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     _animationController.forward();
     _animationController.addStatusListener((status){
       if (status==AnimationStatus.completed){
-        Navigator.push(context , MaterialPageRoute(builder: (context) => Home()));
+        Navigator.pushReplacementNamed(context, NavigationRoute.home);
       }
     });
   }
